@@ -96,6 +96,45 @@ components and classification accuracy.
 
 The repository and initial project documentation are currently being established.
 
+## Project Workflow
+
+The project is organized into the following experimental stages:
+
+1. Load the official Fashion-MNIST training and test sets using a custom IDX
+   loader.
+2. Perform exploratory data analysis, including sample visualizations, class
+   distributions, mean class images, and pixel-intensity analysis.
+3. Scale the image features and fit PCA using training data only.
+4. Select the number of principal components using a stated explained-variance
+   criterion.
+5. Create a validation split from the official training set for model and
+   hyperparameter selection.
+6. Train and tune KNN, RBF SVM, Random Forest, and MLP classifiers using the
+   same PCA representation.
+7. Evaluate the selected models on the official Fashion-MNIST test set.
+8. Compare accuracy, macro F1-score, fit time, and prediction time.
+9. Analyse per-class precision and recall, the confusion matrix, and
+   misclassified examples.
+10. Perform a PCA component sweep to study the relationship between
+    dimensionality and classification performance.
+
+The official 10,000-image test set will not be used for hyperparameter
+selection. PCA will be fitted using training data only to avoid data leakage.
+
+## Development Workflow
+
+Project development follows a branch-based Git workflow:
+
+1. Synchronize the local `main` branch with the remote repository.
+2. Create a separate branch for each feature, experiment, or documentation task.
+3. Commit logically related changes with descriptive commit messages.
+4. Push the branch to GitHub.
+5. Open a pull request into `main`.
+6. Have another team member review the changes before merging.
+
+This workflow keeps individual contributions traceable and allows changes to be
+reviewed before they become part of the main project.
+
 ## Acknowledgements and Tools
 
 External documentation, tutorials, AI-assisted tools, and other resources used
